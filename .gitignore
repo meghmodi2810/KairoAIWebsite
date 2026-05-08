@@ -1,4 +1,9 @@
-# Logs
+.env
+node_modules/
+dist/
+/.idea
+/.vscode
+*.log# Logs
 logs
 *.log
 npm-debug.log*
@@ -22,3 +27,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+public/KairoAI.apk

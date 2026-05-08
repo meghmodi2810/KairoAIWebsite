@@ -114,20 +114,7 @@ function App() {
               </div>
             </div>
 
-            <div className="value-grid">
-              <NeoBox className="card-hover">
-                <h3>What is Kairo?</h3>
-                <p>A friendly companion that cheers you on while you practice everyday signs.</p>
-              </NeoBox>
-              <NeoBox className="accent-yellow card-hover">
-                <h3>Why it matters</h3>
-                <p>When kids can communicate, confidence grows and families connect.</p>
-              </NeoBox>
-              <NeoBox className="accent-mint card-hover">
-                <h3>How it feels</h3>
-                <p>Like a game: short challenges, clear goals, and a celebratory high-five.</p>
-              </NeoBox>
-            </div>
+            
 
             <div className="value-grid">
               <NeoBox className="card-hover">
@@ -233,7 +220,7 @@ function App() {
                 <NeoButton href="/KairoAI.apk" download ariaLabel="Download Kairo app for Android">
                   Download APK
                 </NeoButton>
-                <p className="download-note">File: kairoai.apk</p>
+                <p className="download-note">File: KairoAI.apk</p>
               </NeoBox>
 
               <NeoBox className="download-card download-card--ios is-muted card-hover">
