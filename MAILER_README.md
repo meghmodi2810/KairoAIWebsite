@@ -47,3 +47,9 @@ npm run dev:all
 Notes
 - If using Gmail, you may need an App Password or to enable access via your Google account security settings.
 - The mailer server listens on `SERVER_PORT` (default 5175) and Vite proxies `/api` to it during development.
+
+5. Site icon (favicon)
+
+- To change the website icon to the image you provided, copy the image file into the project's `public/` folder as `favicon.png`.
+- The site already references `/favicon.png`. After placing the file, reload the site — browsers will pick up the new icon (you may need to clear cache or hard-refresh).
+
