@@ -47,7 +47,9 @@ function App() {
     <div className="app-shell">
       <header className="site-header container">
         <div className="brand-block">
-          <div className="brand-mark" aria-hidden="true">K</div>
+          <div className="brand-mark" aria-hidden="true">
+            <img src={heroImg} alt="KairoAI logo" />
+          </div>
           <div>
             <NeoSticker text="Support Portal" className="header-sticker" />
             <h1 className="brand-title">KairoAI</h1>

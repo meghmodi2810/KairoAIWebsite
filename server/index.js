@@ -40,7 +40,8 @@ app.post('/api/send', async (req, res) => {
   }
 
   const mailOptions = {
-    from: `${email}`,
+    from: SMTP_USER,
+    replyTo: email,
     to: CONTACT_RECIPIENT,
     subject: `KairoAI Support Message from ${email}`,
     text: `From: ${email}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message}`,

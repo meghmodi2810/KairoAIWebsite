@@ -68,8 +68,15 @@
   box-shadow: var(--neo-shadow);
   display: grid;
   place-items: center;
-  font-family: var(--font-heading);
-  font-size: 2.4rem;
+  padding: 0.35rem;
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .header-sticker {
