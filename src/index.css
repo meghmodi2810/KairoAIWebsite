@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+:root {
+  --paper-cream: #fff7e8;
+  --ink-black: #111111;
+  --cobalt-blue: #3559ff;
+  --signal-yellow: #ffd84d;
+  --punch-red: #ff6b57;
+  --mint-green: #78e8a0;
+  --surface-white: #ffffff;
+
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --neo-border: 3px solid var(--ink-black);
+  --neo-shadow: 6px 6px 0 0 var(--ink-black);
+  --neo-shadow-lift: 8px 8px 0 0 var(--ink-black);
+  --neo-shadow-press: 2px 2px 0 0 var(--ink-black);
+
+  --transition-fast: 120ms ease;
+  --transition-med: 200ms ease;
+
+  color: var(--ink-black);
+  font-family: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--paper-cream);
+  color: var(--ink-black);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(0deg, rgba(17, 17, 17, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 10% 10%, rgba(53, 89, 255, 0.12), transparent 40%),
+    radial-gradient(circle at 92% 12%, rgba(255, 216, 77, 0.25), transparent 40%);
+  background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+p {
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--signal-yellow);
+  color: var(--ink-black);
+}
+
+.neo-box {
+  background: var(--surface-white);
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  padding: 2rem;
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.neo-button {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  padding: 0.95rem 1.8rem;
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  background: var(--cobalt-blue);
+  color: #ffffff;
+}
+
+.neo-button--primary {
+  background: var(--cobalt-blue);
+  color: #ffffff;
+}
+
+.neo-button--secondary {
+  background: var(--signal-yellow);
+  color: var(--ink-black);
+}
+
+.neo-button--mint {
+  background: var(--mint-green);
+  color: var(--ink-black);
+}
+
+.neo-button--outline {
+  background: var(--surface-white);
+  color: var(--ink-black);
+}
+
+.neo-button--red {
+  background: var(--punch-red);
+  color: #ffffff;
+}
+
+.neo-button:not(.is-disabled):hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow-lift);
+}
+
+.neo-button:not(.is-disabled):active {
+  transform: translate(6px, 6px);
+  box-shadow: none;
+}
+
+.neo-button.is-disabled {
+  background: #d9d9d9;
+  color: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.neo-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.neo-input-label {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.neo-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.05rem;
+  border: var(--neo-border);
+  box-shadow: 4px 4px 0 0 var(--ink-black);
+  outline: none;
+  background: var(--surface-white);
+  color: var(--ink-black);
+}
+
+.neo-input:focus {
+  box-shadow: 6px 6px 0 0 var(--cobalt-blue);
+}
+
+textarea.neo-input {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.neo-helper {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.sticker {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--ink-black);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transform: rotate(-3deg);
+  background: var(--signal-yellow);
+}
+
+.sticker--alert {
+  background: var(--punch-red);
+  color: #ffffff;
+}
+
+.sticker--mint {
+  background: var(--mint-green);
+}
+
+.sticker--blue {
+  background: var(--cobalt-blue);
+  color: #ffffff;
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border: var(--neo-border);
+  background: var(--surface-white);
+  cursor: pointer;
+  box-shadow: 4px 4px 0 0 var(--ink-black);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.tab-link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow-lift);
+}
+
+.tab-link.active {
+  background: var(--signal-yellow);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow-lift);
+}
+
+.tab-link:focus-visible,
+.neo-button:focus-visible,
+.neo-input:focus-visible {
+  outline: 3px solid var(--cobalt-blue);
+  outline-offset: 2px;
+}
+
