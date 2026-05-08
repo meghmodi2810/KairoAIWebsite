@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import heroImg from './assets/hero.png';
 import { NeoBox, NeoButton, NeoInput, NeoSticker } from './components/NeoComponents';
 import './App.css';
@@ -13,32 +13,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('about');
   const [contactForm, setContactForm] = useState({ email: '', phone: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
-  const [apkAvailable, setApkAvailable] = useState(null);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    const checkApkAvailability = async () => {
-      try {
-        const response = await fetch('/KairoAI.apk', { method: 'HEAD' });
-        const contentType = response.headers.get('content-type') || '';
-        const looksLikeHtml = contentType.includes('text/html');
-        if (isMounted) {
-          setApkAvailable(response.ok && !looksLikeHtml);
-        }
-      } catch {
-        if (isMounted) {
-          setApkAvailable(false);
-        }
-      }
-    };
-
-    checkApkAvailability();
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  const androidApkUrl = 'https://github.com/meghmodi2810/KairoAIWebsite/releases/latest/download/KairoAI.apk';
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
@@ -245,18 +220,10 @@ function App() {
                 <div className="platform-icon">AND</div>
                 <h3>Android</h3>
                 <p>Full experience with real-time feedback.</p>
-                {apkAvailable ? (
-                  <NeoButton href="/KairoAI.apk" download ariaLabel="Download Kairo app for Android">
-                    Download APK
-                  </NeoButton>
-                ) : (
-                  <NeoButton disabled variant="mint" ariaLabel="Android APK unavailable">
-                    APK Unavailable
-                  </NeoButton>
-                )}
-                <p className="download-note">
-                  {apkAvailable ? 'File: KairoAI.apk' : 'APK is not deployed yet. Please check back soon.'}
-                </p>
+                <NeoButton href={androidApkUrl} ariaLabel="Download Kairo app for Android">
+                  Download APK
+                </NeoButton>
+                <p className="download-note">Hosted on GitHub Releases</p>
               </NeoBox>
 
               <NeoBox className="download-card download-card--ios is-muted card-hover">
